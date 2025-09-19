@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bewerbung | Wiesbaden-RP</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/logo.webp" alt="Wiesbaden-RP Logo">
+      <span>Wiesbaden-RP</span>
+    </div>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="bewerbung.html" class="active">Bewerbungen</a>
+      <a href="regelwerk.html">Regelwerk</a>
+      <a href="forum.html">Forum</a>
+      <a href="https://discord.gg/m9WrFk2DKS" target="_blank" class="discord-btn">Discord</a>
+    </nav>
+  </header>
+  <section class="hero animated-bg">
+    <div class="hero-content">
+      <h1 class="hero-title">🚀 Bewirb dich bei <span>Wiesbaden-RP</span></h1>
+      <p class="hero-sub">Wähle deine Rolle und zeige uns, warum genau du ins Team passt!</p>
+    </div>
+  </section>
+  <main class="container">
+    <form id="applicationForm" class="form-card">
+      <h2 class="form-title">Bewerbung</h2>
+
+      <label for="role">Bewerbung für:</label>
+      <select id="role" required>
+        <option value="">Bitte auswählen</option>
+        <option value="Moderator">Moderator</option>
+        <option value="Teamler">Teamler</option>
+        <option value="Tester">Tester</option>
+        <option value="Developer">Developer</option>
+      </select>
+      <label for="username">Roblox Username:</label>
+      <input type="text" id="username" placeholder="z.B. Max123" required>
+      <label for="discord">Discord Name:</label>
+      <input type="text" id="discord" placeholder="z.B. Max#1234" required>
+      <label for="age">Alter:</label>
+      <input type="number" id="age" min="10" max="99" placeholder="z.B. 16" required>
+      <label for="reason">Warum möchtest du ins Team?</label>
+      <textarea id="reason" placeholder="Schreibe hier deine Motivation..." required></textarea>
+      <div id="devUpload" class="hidden">
+        <label for="files">Beispiele / Bilder anhängen (nur für Developer):</label>
+        <input type="file" id="files" multiple accept="image/*">
+      </div>
+
+      <button type="submit" class="btn">Absenden</button>
+      <p id="statusMessage"></p>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 Wiesbaden-RP | Made by <span class="lenny">Lenny</span></p>
+  </footer>
+</body>
+</html>
