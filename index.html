@@ -1,203 +1,64 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hello - Graphic Designer</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-body {
-    background-color: #0f0f0f;
-    color: #fff;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-#overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background-color: #0f0f0f;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1000;
-    flex-direction: column;
-    text-shadow: 0 0 10px #FFD700;
-}
-.card {
-    background-color: #1a1a1a;
-    padding: 40px 30px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 380px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
-    display: none;
-}
-.card h1 { margin-bottom: 15px; font-size: 28px; color: #FFD700; }
-.card p { margin-bottom: 25px; font-size: 16px; color: #ccc; }
-.discord-card {
-    background-color: #121212;
-    border-radius: 15px;
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 25px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 0 10px rgba(255,255,255,0.05);
-}
-.discord-card:hover { box-shadow: 0 0 20px #FFD700; }
-.discord-card img { width: 50px; height: 50px; border-radius: 8px; margin-right: 15px; object-fit: cover; }
-.discord-card-info { flex: 1; text-align: left; }
-.discord-card-info p { margin: 2px 0; font-size: 13px; color: #bbb; }
-.join-btn {
-    background-color: #FFD700;
-    color: black;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-}
-.join-btn:hover { box-shadow: 0 0 15px #FFD700; transform: scale(1.05); }
-.socials { display: flex; justify-content: center; gap: 25px; margin-top: 15px; flex-wrap: wrap; }
-.socials svg { width: 30px; height: 30px; fill: white; cursor: pointer; transition: 0.3s; }
-.socials svg:hover { transform: scale(1.2); }
-.views { margin-top: 20px; font-size: 14px; color: #bbb; }
-footer { margin-top: 15px; font-size: 12px; color: #555; text-align: center; }
-canvas { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index: -1; }
-@media (max-width: 500px) {
-    .card { padding: 30px 20px; }
-    .card h1 { font-size: 24px; }
-    .card p { font-size: 14px; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiesbaden-RP | Startseite</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<canvas id="goldCanvas"></canvas>
-
-<!-- Overlay -->
-<div id="overlay">Hier klicken, um die Seite zu starten</div>
-
-<!-- Hauptinhalt -->
-<div class="card" id="mainContent">
-    <h1>Hello</h1>
-    <p>Graphic Designer</p>
-    
-    <div class="discord-card" onclick="window.open('https://discord.gg/E8ZRjFWW','_blank')">
-        <img id="serverLogo" src="" alt="Discord Server">
-        <div class="discord-card-info">
-            <strong id="serverName">Hello Design</strong>
-            <p><span id="onlineCount">–</span> Online • <span id="memberCount">–</span> Members</p>
-        </div>
-        <button class="join-btn">Join</button>
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/logo.webp" alt="Wiesbaden-RP Logo">
+      <span>Wiesbaden-RP</span>
     </div>
-
-    <div class="socials">
-        <svg onclick="window.open('https://discord.gg/E8ZRjFWW','_blank')" viewBox="0 0 24 24">
-            <path d="M20.317 4.369A19.91 19.91 0 0 0 16.558 3c-.19.342-.41.8-.563 1.172a18.1 18.1 0 0 0-4.99 0A8.87 8.87 0 0 0 10.44 3 19.9 19.9 0 0 0 3.68 4.37c-1.78 3.267-2.26 6.46-2.02 9.62a19.83 19.83 0 0 0 6.06 3.11c.49-.67.93-1.38 1.31-2.12-.72-.27-1.41-.6-2.06-.98.17-.13.34-.26.5-.39a14.2 14.2 0 0 0 12.04 0c.17.13.34.26.5.39-.65.38-1.34.71-2.06.98.38.74.82 1.45 1.31 2.12a19.83 19.83 0 0 0 6.06-3.11c.29-3.73-.41-6.89-2.02-9.62ZM9.27 12.81c-.9 0-1.64-.83-1.64-1.86s.73-1.86 1.64-1.86 1.66.83 1.64 1.86c0 1.03-.73 1.86-1.64 1.86Zm5.46 0c-.9 0-1.64-.83-1.64-1.86s.73-1.86 1.64-1.86 1.66.83 1.64 1.86c0 1.03-.73 1.86-1.64 1.86Z"/>
-        </svg>
-        <svg onclick="window.open('https://x.com/HelloGfx01','_blank')" viewBox="0 0 24 24">
-            <path d="M17.21 3H20l-6.53 7.46L21 21h-5.63l-4.42-5.14L6 21H3.21l7.08-8.07L3 3h5.74l4.03 4.69L17.21 3Zm-1.98 16h1.53L8.86 5H7.29l7.94 14Z"/>
-        </svg>
-        <svg onclick="window.open('https://www.roblox.com/de/users/7214263914/profile','_blank')" viewBox="0 0 24 24">
-            <path d="M3 9.5 14.5 3 21 14.5 9.5 21 3 9.5Zm9.47-2.13L7.37 9.9l2.54 5.1 5.1-2.53-2.54-5.1Z"/>
-        </svg>
+    <nav>
+      <a href="index.html" class="active">Start</a>
+      <a href="bewerbung.html">Bewerbungen</a>
+      <a href="regelwerk.html">Regelwerk</a>
+      <a href="forum.html">Forum</a>
+      <a href="https://discord.gg/m9WrFk2DKS" target="_blank" class="discord-btn">Discord</a>
+    </nav>
+  </header>
+  <section class="hero animated-bg">
+    <div class="hero-content">
+      <h1 class="hero-title">Willkommen bei <span>Wiesbaden-RP</span></h1>
+      <p class="hero-sub">Der modernste Roblox Roleplay Server inspiriert von der Stadt Wiesbaden.</p>
+      <a href="bewerbung.html" class="btn">Jetzt Bewerben</a>
     </div>
-
-    <div class="views">👁️ <span id="views">0</span></div>
-    <footer>© Copyright by Lenny – Alle Inhalte geschützt</footer>
-</div>
-
-<audio id="bg-music" loop>
-    <source src="musik.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-// Overlay starten
-document.getElementById("overlay").addEventListener("click", function() {
-    this.style.display = "none";
-    document.getElementById("mainContent").style.display = "block";
-    document.getElementById("bg-music").play();
-    updateCounter();
-    updateDiscordStats();
-});
-
-// Discord Stats & Logo
-async function updateDiscordStats() {
-    // Dummy-Daten, später über API ersetzen
-      document.getElementById("serverLogo").src = "https://media.discordapp.net/attachments/1402353507968745572/1402353508547825724/Logo.png?ex=68a5673a&is=68a415ba&hm=96e18396e40e67ddf61c1567c11382e81214c0cf675ef5c12dbf9cb67b96341e&=&format=webp&quality=lossless&width=578&height=578";
-    document.getElementById("serverName").textContent = "Hello Design";
-
-}
-
-// Besucherzähler
-function updateCounter() {
-    let views = localStorage.getItem("views") || 0;
-    views++;
-    localStorage.setItem("views", views);
-    document.getElementById("views").textContent = views;
-}
-
-// Goldregen Canvas
-const canvas = document.getElementById("goldCanvas");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let drops = [];
-for(let i = 0; i<100; i++){
-    drops.push({
-        x: Math.random()*canvas.width,
-        y: Math.random()*canvas.height,
-        l: Math.random()*15+5,
-        xs: Math.random()*2-1,
-        ys: Math.random()*4+2
-    });
-}
-
-function draw(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.fillStyle = "rgba(255,215,0,0.7)";
-    ctx.beginPath();
-    for(let i=0;i<drops.length;i++){
-        let d = drops[i];
-        ctx.moveTo(d.x,d.y);
-        ctx.arc(d.x,d.y,d.l/2,0,Math.PI*2,true);
-    }
-    ctx.fill();
-
-    for(let i=0;i<drops.length;i++){
-        let d = drops[i];
-        d.x += d.xs;
-        d.y += d.ys;
-        if(d.x>canvas.width||d.x<0||d.y>canvas.height){
-            d.x = Math.random()*canvas.width;
-            d.y = -10;
-        }
-    }
-    requestAnimationFrame(draw);
-}
-draw();
-
-// Fenstergröße anpassen
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-</script>
-
+  </section>
+  <main class="container">
+    <section class="card slide-up">
+      <h2>🌆 Realistisches RP</h2>
+      <p>Erlebe eine detailreiche Roleplay-Welt mit einzigartigen Features.</p>
+    </section>
+    <section class="card slide-up">
+      <h2>🤝 Community</h2>
+      <p>Tausche dich im Forum aus und finde deinen Platz im Wiesbaden-RP Universum.</p>
+    </section>
+    <section class="card slide-up">
+      <h2>🛠️ Team</h2>
+      <p>Werde Teil des Teams – als Moderator, Tester oder Developer.</p>
+    </section>
+  </main>
+  <section class="container team-section">
+    <h2 class="section-title">👥 Unser Team</h2>
+    <div class="team-grid">
+      <div class="team-card slide-up">
+        <h3>Lenny</h3>
+        <img src="assets/teamler1.png" alt="Max Mustermann" class="team-img">
+        <p class="role">Web entwickler & developer</p>
+      </div>
+      <div class="team-card slide-up">
+        <h3>Dev_Chico</h3>
+        <img src="assets/EW_GFX_RS6.webp" alt="Anna Beispiel" class="team-img">
+        <p class="role">Owner At EW</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 Wiesbaden-RP | Made by <span class="lenny">Lenny</span></p>
+  </footer>
 </body>
 </html>
 
